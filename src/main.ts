@@ -45,7 +45,6 @@ class Main {
     tabelaTransicao.push({ from: "q10", to: "q11", symbol: "m" });
       
     const transicaoVazia = new Map<State, State[]>(); // Não há transição epsilon em AFD
-    console.log(tabelaTransicao)
     
     return new AFD(
       estadoInicial,
@@ -69,8 +68,6 @@ class Main {
       ["q1", ["q2"]],
     ]);
 
-    console.log(tabelaTransicao)
-    console.log(transicaoVazia)
     return new AFNe(
       estadoInicial,
       estadosFinais,
@@ -80,13 +77,13 @@ class Main {
   }
 
   public testarPalavras(palavrasAFNe: string[], palavrasAFD: string[]): void {
-    console.log("Testando com AFD:");
+    console.log("Testando email com AFD:");
     palavrasAFD.forEach((palavra) => {
       const resultado = this.afd.verifyInput(palavra) ? "ACEITA" : "REJEITA";
       console.log(`Palavra "${palavra}": ${resultado}`);
     });
 
-    console.log("\nTestando com AFNe:");
+    console.log("\nTestando palavra tipo a*b*c* com AFNe:");
     palavrasAFNe.forEach((palavra) => {
       const resultado = this.afne.verifyInput(palavra) ? "ACEITA" : "REJEITA";
       console.log(`Palavra "${palavra}": ${resultado}`);
@@ -97,5 +94,5 @@ class Main {
 // Executando os testes
 const main = new Main();
 const palavrasAFD = ["jose@gmail.com", "jose2321mail", "jose.luiz@gmail.com", "jose@gmail."];
-const palavrasAFNe = ["aaa", "ab", "abc", "c", "", "a", "b", "c", "aabbcc"];
+const palavrasAFNe = ["aaa", "ab", "abc", "c", "", "a", "b", "c", "aabbcc", "d", "aba", "cb", "bc"];
 main.testarPalavras(palavrasAFNe, palavrasAFD);
