@@ -1,1 +1,1 @@
-Autômatos Finitos Determinísticos e Autômatos Finitos Não Determinísticos Com Transição Vazia genéricos dada uma tabela de transição.
+Implementação de Autômato Finito Determinístico (AFD) e Autômato Finito Não Determinístico Com Transição Vazia (AFNe) genéricos dada uma tabela de transição.
