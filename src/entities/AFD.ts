@@ -18,7 +18,7 @@ export class AFD extends AutomatoFinito {
     for (let i = 0; i < palavra.length; i++) {
       const transition = this.transition(estadoAtual, palavra[i]);
 
-      if (transition.length > 0) {
+      if (transition.length == 1) {
         estadoAtual = transition[0];
       } else {
         // Caso não haja transição válida, a palavra é rejeitada
